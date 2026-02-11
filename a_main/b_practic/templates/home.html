@@ -7,9 +7,9 @@
 
 {% block navitems %}
         <a class="nav-link active" aria-current="page" href="/">Home</a>
-        <a class="nav-link" href="about/">Features</a>
-        <a class="nav-link" href="course/">Courses</a>
-        <a class="nav-link" href="admin/">Admin</a>
+        <a class="nav-link" href="/about/">Features</a>
+        <a class="nav-link" href="/course/">Courses</a>
+        <a class="nav-link" href="/admin/">Admin</a>
   
 {% endblock navitems %}
 
@@ -24,18 +24,19 @@
         <hr>
         
     <div class="form-group">
-        <label>First Name</label>
-        <input type="text"  class="form-control" required name="first_name">
+        <label>Course Name</label>
+        <input type="text"  class="form-control" required name="course_name">
         
     </div>
     <div class="form-group">
-        <label>Last Name</label>
-        <input type="text" class="form-control" required name="last_name">
+        <label>Course Description</label>
+        <textarea name="course_description" id="" class="form-control"></textarea>
     </div>
     <div class="form-group">
-        <label for="ageInput">Age</label>
-        <input type="number" class="form-control" id="ageInput" min="1" max="120" placeholder="Enter your age" required name="Age">
+        <label>Course_Image</label>
+        <input type="file" class="form-control" required name="course_image">
     </div>
+
     <br>
     <button type="submit" class="btn btn-success">Submit</button>
 </form>
