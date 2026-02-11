@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+  home
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="container mt-5">
+    
+    <form class="card mx-auto p-5 col-6 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2 class="d-flex justify-content-center">Hamidiye Foundation</h2>
+        <hr>
+        
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text"  class="form-control" required name="first_name">
+        
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" required name="last_name">
+    </div>
+    <div class="form-group">
+        <label for="ageInput">Age</label>
+        <input type="number" class="form-control" id="ageInput" min="1" max="120" placeholder="Enter your age" required name="Age">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+</div>
+
+
+  
+{% endblock content %}
