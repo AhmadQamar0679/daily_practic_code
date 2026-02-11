@@ -24,3 +24,10 @@ def home(request):
         return redirect("/")
     
     return render(request,'home.html')
+
+def course(request):
+    return render(request,'courses.html')
+
+
+def about(request):
+    return render(request,'about.html')

@@ -11,6 +11,22 @@
     
 </head>
 <body class="bg-primary"> 
+    <nav class="navbar navbar-expand-lg bg-body-primary mt-2">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Learning Computer</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        {% block navitems %}
+          
+        {% endblock navitems %}
+
+      </div>
+    </div>
+  </div>
+</nav>
     {% block content %}
       
     {% endblock content %}
