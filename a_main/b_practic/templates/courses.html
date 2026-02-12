@@ -1,18 +1,53 @@
 {% extends "base.html" %}
 
+{% block title %}
+
+  Courses
+  
+{% endblock title %}
+
 {% block navitems %}
 <a class="nav-link active" aria-current="page" href="/">Home</a>
 <a class="nav-link" href="/about/">Features</a>
-<a class="nav-link" href="/admin/">Admin</a>
-
-
-  
+<a class="nav-link" href="/admin/">Admin</a>  
 {% endblock navitems %}
 
 {% block content %}
 
+<table class="table">
 
-<h1>Courses Page</h1>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Course Description</th>
+      <th scope="col">Course Image</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        {%for course in courses%}
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{course.course_name}}</td>
+      
+      <td>{{course.course_description}}</td>
+      <td>
+        <img src="/media/{{course.course_image}}" style="height: 90px;" > </td>
+      <td>
+        <a href="/delete_course/{{course.id}}/" class="btn btn-danger">Delete</a>
+     </td>
+  
+    
+    </tr>
+    
+  
+
+    {% endfor %}
+
+
+  </tbody>
+</table>
 
   
 {% endblock content %}
