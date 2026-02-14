@@ -10,11 +10,14 @@ def home(request):
         data=request.POST
         course_name=data.get("course_name")
         course_description=data.get('course_description')
+        
         course_image=request.FILES.get("course_image")    
         Courses.objects.create(
             course_name=course_name,
             course_description=course_description,
             course_image=course_image,
+            
+
         )
         return redirect("/")
     return render(request,'home.html')
