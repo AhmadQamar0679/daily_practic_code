@@ -14,41 +14,22 @@
 
 {% block content %}
 
-<table class="table">
-
-  <thead>
-    <tr>
-      <th scope="col">{{forloop.counter}}</th>
-      <th scope="col">Course Name</th>
-      <th scope="col">Course Description</th>
-      <th scope="col">Course Image</th>
-      
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-        {%for course in courses%}
-      <th scope="row">{{ forloop.counter }}</th>
-      <td>{{course.course_name}}</td>
-      
-      <td>{{course.course_description}}</td>
-      <td>
-        <img src="/media/{{course.course_image}}" style="height: 90px;" > 
-      </td>
-      <td>
-
-        <a href="/delete_course/{{course.id}}/" class="btn btn-danger">Delete</a>
-     </td>
-    </tr>
-    
-  
-
+<div class="row">
+    {% for course in courses %}
+    <div class="col-md-4">
+        <div class="card">
+            <img src="{{ course.image.url }}" class="card-img-top">
+            <div class="card-body">
+                <h5>{{ course.name }}</h5>
+                <a href="{% url 'course_detail' course.id %}" class="btn btn-primary">
+                    Open Course
+                </a>
+            </div>
+        </div>
+    </div>
     {% endfor %}
+</div>
 
-
-  </tbody>
-</table>
 
   
 {% endblock content %}
